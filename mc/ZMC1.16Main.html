@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MCZMCraft</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="assets/css/Article-List.css">
+    <link rel="stylesheet" href="assets/css/Basic-fancyBox-Gallery.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/sticky-dark-top-nav-with-dropdown.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color: rgb(255,255,255);">
+        <div class="container">
+            <div><a class="navbar-brand" href="index.html"><span><img src="assets/img/logo.png"></span> </a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button></div>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav nav-right" style="margin-left: 0%;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="ZMC1.16Main.html" style="font-family: Roboto, sans-serif;font-size: 20px;">Gracze ONLINE</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="ZMC1.16Mapaweb.html" style="color: rgba(0,0,0,0.9);filter: blur(0px);font-family: Roboto, sans-serif;font-size: 20px;">Mapa web</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="ZMC1.16Mapaweb2.html" style="color: rgba(0,0,0,0.9);filter: blur(0px);font-family: Roboto, sans-serif;font-size: 20px;">Mapa live</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="ZMC1.16Galeria.html" style="color: rgba(0,0,0,0.9);font-family: Roboto, sans-serif;font-size: 20px;">Galeria</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="ZMC1.16Stat.html" style="color: rgba(0,0,0,0.9);font-family: Roboto, sans-serif;font-size: 20px;">Statystyki</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="ZMC1.16Sklep.html" style="color: rgba(0,0,0,0.9);font-family: Roboto, sans-serif;font-size: 20px;">Sklep</a></li>
+                    <li class="nav-item" role="presentation"></li>
+        </div>
+    </nav>
+    <div class="contact-clean" style="padding-left: 5px;color: #212529;background-color: #465765; min-height:600px; background-image: url(&quot;assets/img/2020-05-13_18.06.43.png&quot;);background-position: top;background-size: cover; background-repeat: no-repeat; overflow-wrap: break-word ;">
+        <form class="text-center" class="" data-bss-recipient="b1f21100c7653155f7426ee823bf40a3" data-bss-subject="Whitelista - Nowe Zgłoszenie" style="margin-top: 0px;">
+            <p class="para" id="online">Serwer online: </p>
+            <p class="para" id="ilosc">Ilosc graczy: </p>
+            <p class="para" id="playerListHTML">Gracze online: </p>
+        </form>
+
+    </div>
+    <div class="footer-basic" style="padding-top: 40px;">
+        <footer>
+            <p class="copyright">ZMCraft © 2020<br></p>
+        </footer>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/smart-forms.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+    <script src="assets/js/Basic-fancyBox-Gallery.js"></script>
+    <script>
+        const xhr = new XMLHttpRequest();
+        
+        xhr.addEventListener("load", function() {
+            if (xhr.status === 200) {
+                var minecraft = JSON.parse(xhr.response)
+                if (minecraft.version === "???"){
+                  document.getElementById('online').textContent="Serwer online: offline";
+                  document.getElementById('ilosc').textContent="Ilosc graczy: 0/30";
+                  document.getElementById('playerListHTML').textContent="Gracze online: Serwer jest offline";
+                }
+                else{
+                  if(minecraft.players.online === 0){
+                    document.getElementById('playerListHTML').textContent = "Gracze online: Brak graczy online";
+                    document.getElementById('ilosc').textContent="Ilosc graczy: 0/30";
+                    document.getElementById('online').textContent="Serwer online: online";
+                  }else{
+                    for (var i = 0; i < minecraft.players.list.length; i++) {
+                    console.log(minecraft.players.list[i])
+                    var para = document.createElement("li");
+                    var node = document.createTextNode(minecraft.players.list[i]);
+                    para.appendChild(node);
+
+                    var para2 = document.createElement("img");
+                    para2.src = "https://minotar.net/avatar/" + minecraft.players.list[i] + "/50";
+
+                    var element = document.getElementById("playerListHTML");
+                    
+                    element.appendChild(para);
+
+                    element.appendChild(para2);
+            }
+                    document.getElementById('ilosc').textContent="Ilosc graczy: "+minecraft.players.online+"/30";
+                    document.getElementById('online').textContent="Serwer online: online";
+                  }}
+                }
+
+        }
+        );
+        xhr.addEventListener("error", function() {
+            alert("Niestety nie udało się nawiązać połączenia");
+        });
+        xhr.open("GET", "https://api.mcsrvstat.us/2/mc.zmcraft.pl", true);
+        xhr.send();
+        </script>
+</body>
+
+</html>

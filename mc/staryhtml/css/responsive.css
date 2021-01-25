@@ -1,0 +1,35 @@
+@media only screen and (max-width: 340px){
+    .glowa .menu .navbar,
+    .glowa .menu .navbar .navbar-brand,
+    {
+        padding: 2%;
+        margin: 0%;
+    }
+
+    .site-main .site-banner .site-title h1{
+        font-size: 41px;
+    }
+
+}
+
+
+/* if the viewport is equal to 340px or less than that */ 
+@media only screen and (max-width: 792px){
+    .strona .informacje .site-title h2 > span{
+        font-size: 31px;
+        letter-spacing: 10px;
+    }
+
+}
+
+
+@media only screen and (max-width: 1910px){
+    .strona .menu .navbar{
+        padding: 1rem;
+    }
+
+    .container{
+        max-width: 90%;
+    }
+
+}

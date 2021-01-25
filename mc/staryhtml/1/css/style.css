@@ -1,0 +1,184 @@
+@import url(./fonts.css);
+@import url(./partials/_variables.css)
+
+
+.glowa .menu .navbar .navbar-brand{
+    padding: 0 2rem 0 5rem;
+}
+
+.glowa .menu .navbar{
+    padding: 1rem 10rem;
+}
+
+.glowa .menu .nav-item .nav-link{
+    font-family: 'Raleway',cursive;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 1.7rem;
+    color: black;
+}
+
+.glowa .menu .navbar-nav .active a{
+    background: darkblue;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.glowa .menu .navbar-nav a:hover{
+    background: darkblue;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.strona .baner{
+    background: url(../img/bcg.png) no-repeat 0% 50%;
+}
+
+.baner{
+    background: url(../img/bcg.png);
+}
+
+.strona .informacje{
+    background: url(../img/bcg.png) no-repeat 0% 50%;
+}
+
+.strona .baner .site-title h3{
+    font-family: 'Raleway',cursive;
+    padding-top: 42%;
+    font-weight: 500;
+}
+
+.strona .baner .site-title h1{
+    font-family: 'Raleway',cursive;
+    padding-left: 25%;
+    font-size: 2rem;
+}
+
+.strona .baner .site-title h4{
+    font-family: 'Raleway',cursive;
+    padding-left: 40%;
+    font-size: 3rem;
+}
+
+.strona .baner .banner-image >img{
+    padding: 7rem 0;
+    width: 90rem;
+}
+
+.title-text{
+    font:normal bold 50px/ 60px 'Raleway'
+}
+
+
+
+.strona .informacje .about-image >img{
+    padding: 7rem 0;
+    width: 21rem;
+}
+
+.strona .informacje{
+    padding: 8rem 5rem;
+    padding-left: 28%;
+}
+
+.strona .informacje .about-title h2 >span{
+    display: block;
+    font: normal bold 49px/ 60px 'Raleway';
+}
+
+.strona .informacje .about-title .paragraph > p{
+    padding: 0.5rem 0;
+}
+
+p.para{
+    color: blue,
+    font: normal 500 16px/25px 'Raleway';
+}
+
+.button{
+    padding: 0.8rem 2.2rem;
+    font: normal 500 16px/20px 'Raleway';
+    position: relative;
+    border: 3px solid transparent;
+    border-radius: 4px;
+}
+
+.button.primary-button{
+    background: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
+    background-clip: padding-box;
+    color: whitesmoke;
+    transition: 6s ease;
+    box-shadow: blue;
+}
+
+.button.primary-button:hover{
+    background: whitesmoke;
+    background-clip: padding-box;
+    color: black;
+}
+
+
+body{
+	margin: 0 auto;
+}
+li{
+    width:60%;
+    text-align:center;
+    font-size:20px;
+}
+ul{
+    width:100%;
+}
+.container{
+width:100%;
+margin:0 auto;
+}
+.card{
+    width:30%;
+    flex-direction:row;
+    float:left;
+    margin:30px;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#chart {
+   height: 300px;
+   width: 1000px;
+   font-size:20px;
+ }
+
+#chartTwo {
+   height: 400px;
+   width: 1000px;
+ }
+
+#chartThree {
+   height: 400px;
+   width: 1000px;
+ }
+
+.baner2{
+    background: url(../img/bcg2.png) no-repeat 0% 50%;
+    width: 100%;
+    height: 100%;
+}
+.gallery{
+    margin: 10px 110px;
+}
+.gallery img{
+    transition: 1s;
+    padding: 15px;
+    width: 400px;
+}
+.gallery img:hover{
+    filter: grayscale(100%);
+    transform: scale(1.1);
+}

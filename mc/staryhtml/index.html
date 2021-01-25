@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ZMCraft</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+
+</head>
+<body>
+    <!-- głowa -->
+
+    <header class="glowa">
+        <div class="menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="./index.html"><img src="./img/logo.png" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="mr-auto"></div>
+                  <ul class="navbar-nav">
+                  </ul>
+                </div>
+              </nav>
+        </div>
+    </header>
+
+    <!-- głowa -->
+
+    <!-- ciało -->
+        <section class="baner">
+                    <div style="text-align: center;">
+                        <h2 class="text-uppercase pt-3">
+                            <span style="color: white;">Adres serwera:</span>
+                            <span style="color: white;">mc.zmcraft.pl</span>
+                        </h2>
+                        <div class="" style="color: white;">
+                            <p class="para" id="online">Serwer online: </p>
+                            <p class="para" id="ilosc">Ilosc graczy: </p>
+                            <p class="para" id="playerListHTML">Serwer online: </p>
+                        </div>
+                                
+                       
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    <!-- ciało -->
+
+    <script src="./js/jquerry.3.4.1.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script>
+        const xhr = new XMLHttpRequest();
+        
+        xhr.addEventListener("load", function() {
+            if (xhr.status === 200) {
+                console.log("Wynik połączenia:");
+                var minecraft = JSON.parse(xhr.response)
+                console.log(minecraft);
+                if (minecraft.version === "???"){
+                  document.getElementById('online').textContent="Serwer online: offline";
+                  document.getElementById('ilosc').textContent="Ilosc graczy: 0/30";
+                  document.getElementById('playerListHTML').textContent="Gracze online: Serwer jest offline";
+                }
+                else{
+                  if(minecraft.players.online === 0){
+                    document.getElementById('playerListHTML').textContent = "Gracze online: Brak graczy online";
+                    document.getElementById('ilosc').textContent="Ilosc graczy: 0/30";
+                    document.getElementById('online').textContent="Serwer online: online";
+                  }else{
+                    document.getElementById('playerListHTML').textContent = "Gracze online: " +minecraft.players.list+", ";
+                    document.getElementById('ilosc').textContent="Ilosc graczy: "+minecraft.players.online+"/30";
+                    document.getElementById('online').textContent="Serwer online: online";
+                  }}
+                }
+        }
+        );
+        xhr.addEventListener("error", function() {
+            alert("Niestety nie udało się nawiązać połączenia");
+        });
+        xhr.open("GET", "https://api.mcsrvstat.us/2/mc.zmcraft.pl", true);
+        xhr.send();
+        </script>
+
+
+    
+</body>
+</html>
+
+
